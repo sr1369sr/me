@@ -1,0 +1,320 @@
+
+     #sidebar-toggle {
+      position: fixed;
+      top: 2px;
+      right: 8px;
+      z-index: 1001;
+      background: #e0e5ec;
+      color: #007bff;
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      border-radius: 50%;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), -3px -3px 10px rgba(255, 255, 255, 0.7);
+      transition: all 0.3s ease;
+    }
+
+    #sidebar-toggle:hover {
+      box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.2), inset -3px -3px 8px rgba(255, 255, 255, 0.7);
+      transform: scale(1.1);
+    }
+	#sidebar-toggle.open {
+  background: #ff4d4f; /* قرمز */
+  color: white;
+}
+
+#sidebar-toggle.open:hover {
+  box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.2), inset -3px -3px 8px rgba(255, 255, 255, 0.7);
+  transform: scale(1.1);
+}
+
+
+  #sidebar {
+  position: fixed;
+  top: 0;
+  right: -350px;
+  height: 100%;
+  width: 350px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: right 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  z-index: 1000;
+  background: #e0e5ec;
+  box-shadow: -10px 0px 30px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar.open {
+  right: 0;
+}
+
+/* 📱 موبایل و تبلت: سایدبار تمام عرض */
+@media (max-width: 1024px) {
+  #sidebar {
+    width: 100vw;
+    right: -100vw;
+  }
+
+  #sidebar.open {
+    right: 0;
+  }
+}
+
+
+    #sidebar header {
+      padding: 7px;
+      display: flex;
+      justify-content: space-between;
+      text-align: center; /* اضافه کردن این خط */
+  width: 100%; /* اضافه کردن این خط */
+  display: block; /* اضافه کردن این خط */
+      background: #007bff;
+      color: white;
+      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    #sidebar header span {
+      font-size: 17px;
+      font-weight: bold;
+    }
+	
+	
+ .accordion {
+  margin: 20px 15px;
+}
+
+.accordion button {
+width: 100%;
+  color: #fff;
+  padding: 5px;
+  background: #a414a1;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 3px 3px 8px rgba(125, 17, 215, 0.5), -3px -3px 8px rgba(255, 20, 20, 0.7);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: 'Vazir', sans-serif;
+}
+
+.accordion button:hover {
+  background: #007bff;
+  color: white;
+}
+
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease, visibility 0.3s ease;
+  background: #c3d8f4;
+  padding: 0; /* حذف پدینگ در حالت بسته */
+  margin: 0; /* حذف مارجین در حالت بسته */
+  border-radius: 12px;
+}
+
+.panel.open {
+  max-height: none; /* نمایش کامل بدون محدودیت ارتفاع */
+  visibility: visible;
+  opacity: 1;
+  padding: 10px;
+  margin: 5px 0;
+}
+.panel a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  background: #c9b2ff;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2), -3px -3px 8px rgba(255, 255, 255, 0.7);
+  transition: background 0.3s ease;
+}
+
+.panel a:hover {
+  background: #007bff;
+  color: white;
+}
+
+
+
+/* استایل عمومی برای body */
+body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+/* استایل فرم */
+form  {
+  background-color: #ececee;
+  border-radius: 31px;
+  box-shadow: 8px 8px 20px rgba(0, 40, 255, 0.47), -8px -8px 20px rgba(0, 64, 255, 0.57);
+    padding: 20px;
+    width: 90%; /* عرض فرم به صورت واکنش‌گرا */
+    max-width: 400px; /* حداکثر عرض فرم */
+    max-height: 80vh; /* حداکثر ارتفاع فرم */
+    overflow-y: auto; /* فعال‌سازی اسکرول عمودی */
+    transition: box-shadow 0.3s ease; /* انیمیشن تغییر سایه */
+}
+
+/* استایل ورودی‌ها */
+input[type="text"],
+input[type="hidden"] {
+    background-color: #f9f9f9; /* رنگ دکمه */
+  border: none;
+  border-radius: 10px;
+  box-shadow: inset 6px 6px 10px rgba(255, 255, 255, 0.5), inset -6px -6px 10px rgb(110, 153, 255);
+    padding: 10px;
+    width: calc(100% - 20px); /* عرض ورودی‌ها */
+    margin-bottom: 10px; /* فاصله پایین ورودی‌ها کمتر شده است */
+}
+
+/* استایل چک باکس‌ها و برچسب‌ها */
+.checkbox-container {
+    display: flex;
+    align-items: center; /* تراز عمودی مرکز چک باکس و متن */
+    margin-bottom: 10px; /* فاصله بین چک باکس‌ها */
+}
+
+input[type="checkbox"] {
+    margin-right: 10px; /* فاصله بین چک باکس و متن */
+}
+
+/* استایل دکمه ارسال */
+input[type="submit"] {
+    background-color: #4CAF50; /* رنگ دکمه */
+    color: white; /* رنگ متن دکمه */
+    border: none; /* حذف مرز */
+    border-radius: 10px; /* گوشه‌های گرد دکمه */
+    padding: 10px;
+    cursor: pointer; /* نشانگر موس به شکل دست تغییر کند */
+    box-shadow: 2px 2px 5px rgba(210, 210, 210, 0.5), 
+                -2px -2px 5px rgba(255, 255, 255, 1); /* سایه نئومورفیک دکمه */
+    transition: transform .2s ease-in-out; /* انیمیشن نرم برای دکمه‌ها */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* تغییر رنگ دکمه در حالت هاور */
+    transform: translateY(-2px); /* حرکت دکمه به سمت بالا در حالت هاور */
+}
+
+/* استایل پنل آکاردئونی */
+/* استایل پنل آکاردئونی */
+.accordion {
+    background-color: transparent; /* پس‌زمینه شفاف برای پنل آکاردئونی */
+    border-radius: 10px; /* گوشه‌های گرد */
+    overflow: hidden; /* مخفی کردن محتوای اضافی */
+}
+
+/* استایل هدر پنل آکاردئونی */
+.accordion-header {
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #f1f1f1;
+    border-radius: 10px; /* گوشه‌های گرد هدر پنل آکاردئونی */
+    transition: background-color 0.3s ease; /* انیمیشن تغییر رنگ پس‌زمینه هدر پنل آکاردئونی */
+}
+
+.accordion-header:hover {
+    background-color: #e0e0e0; /* تغییر رنگ در حالت هاور هدر پنل آکاردئونی */
+}
+
+
+
+/* استایل محتوای آکاردئونی */
+.accordion-content {
+    max-height: 0; /* حداکثر ارتفاع اولیه صفر */
+    padding: 0 15px; /* فاصله داخلی */
+    overflow: hidden; /* مخفی کردن محتوای اضافی */
+    transition: max-height 0.4s ease, padding 0.4s ease; /* انیمیشن تغییر ارتفاع و فاصله داخلی */
+}
+
+/* کلاس فعال برای نمایش محتوا */
+.accordion-content.show {
+    max-height: 200px; /* حداکثر ارتفاع برای نمایش محتوا (بسته به نیاز شما) */
+    padding: 10px 15px; /* فاصله داخلی در حالت باز */
+}
+@keyframes fadeInDown {
+   from { transform: translateY(-20px); opacity:0; }
+   to { transform: translateY(0); opacity=1; }
+}
+
+/* استایل واکنش‌گرا برای موبایل و تبلت */
+@media (max-width: 600px) {
+   form {
+       width: calc(100% - 40px); /* عرض فرم برای موبایل و تبلت */
+   }
+}
+.container {
+            margin-top: 20px;
+        }
+
+        .unique-input {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .unique-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+               .unique-iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+		/* فرم واکنش‌گرا */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+textarea,
+select {
+  background-color: #f9f9f9;
+  border: none;
+  border-radius: 10px;
+  box-shadow: inset 6px 6px 10px rgba(255, 255, 255, 0.5),
+              inset -6px -6px 10px rgb(110, 153, 255);
+  padding: 10px;
+  width: 100%;
+}
+
+/* برای گروه‌های زمانی و تاریخ */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.form-row .form-group {
+  flex: 1;
+  min-width: 110px;
+}
+
+/* واکنش‌گرا برای موبایل */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
+

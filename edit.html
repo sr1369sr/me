@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>اصلاح وضعیت رویداد</title>
+  <link rel="stylesheet" href="file/edit.css"> <!-- لینک به فایل CSS -->
+</head>
+<body>
+
+  <form id="statusForm">
+    <h2>اصلاح وضعیت رویداد</h2>
+
+    <label for="rowId">شماره ردیف (Row ID):</label>
+    <input type="number" name="rowId" id="rowId" required>
+
+    <label for="status">وضعیت جدید:</label>
+    <select name="status" id="status" required>
+      <option value="✅">✅ انجام شده</option>
+      <option value="❌">❌ انجام نشده</option>
+      <option value="🔄">🔄 در حال انجام</option>
+    </select>
+
+    <button type="submit">ارسال وضعیت</button>
+  </form>
+
+ 
+ <script src="file/edit.js" defer></script> <!-- لینک به فایل JavaScript -->
+</body>
+</html>

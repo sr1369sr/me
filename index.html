@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>فرم نوشته من</title>
+	 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Vazir:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="file/form text.css"> <!-- لینک به فایل CSS -->
+    
+</head>
+<body>
+<div class="container">
+        
+        
+        <iframe id="unique-siteFrame" class="unique-iframe" src="" title="نمایش سایت"></iframe>
+    </div>
+<button id="sidebar-toggle"><i class="fas fa-bars"></i></button>
+ <div id="sidebar">
+    <header>
+      <span>فرم نوشته من</span>
+    </header>
+   <div class="content">
+   
+     <div class="content">
+      <div class="accordion">
+        <button>منو</button>
+        <div class="panel">
+          <a href="index.html">پنل مدیر</a>
+         
+        </div>
+      </div>
+    </div>
+	    <div class="content">
+      <div class="accordion">
+       <button type="button">گزارشات</button>
+
+        <div class="panel">
+         <a href="https://docs.google.com/spreadsheets/d/1UtSwDCfZjN-qsFPbsL6HGuQODdxM8LzLzm8VkMvzpGI/edit?usp=drive_link"target="_blank ">دسترسی کامل</a>
+         <button id="fixed-link-button" class="unique-button" onclick="loadFixedLink()">نقشه</button>
+<button id="edit-button" class="unique-button" onclick="loadEditLink()">ادیت</button>
+<button id="table-button" class="unique-button" onclick="loadTableLink()">جدول</button>
+<button id="events-button" class="unique-button" onclick="loadEventsLink()">لیست رویدادها</button>
+
+<input type="hidden" id="combinedText" name="combinedText">
+		 
+		  
+        </div>
+      </div>
+    </div>
+    </div>
+	
+     <div class="accordion">
+ <button type="button" onclick="toggleAccordion()">فرم_1</button>
+
+  <div class="panel" id="accordionPanel">
+  
+    <form id="myForm" method="POST">
+	 
+      <label for="variableInput">عنوان نوشته</label><br>
+        <input type="text" id="variableInput2" required><br><br>
+		<div class="form-group">
+        <label for="variableInput3">شرح کامل/یادداشت</label>
+        <textarea id="variableInput3" rows="4" required></textarea>
+      </div>
+
+
+
+<div class="form-row">
+        <div class="form-group">
+          <label for="year">سال</label>
+          <select id="year"></select>
+        </div>
+        <div class="form-group">
+          <label for="month">ماه</label>
+          <select id="month">
+            <option value="1">فروردین</option>
+            <option value="2">اردیبهشت</option>
+            <option value="3">خرداد</option>
+            <option value="4">تیر</option>
+            <option value="5">مرداد</option>
+            <option value="6">شهریور</option>
+            <option value="7">مهر</option>
+            <option value="8">آبان</option>
+            <option value="9">آذر</option>
+            <option value="10">دی</option>
+            <option value="11">بهمن</option>
+            <option value="12">اسفند</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="day">روز</label>
+          <select id="day"></select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="hour">ساعت</label>
+          <select id="hour"></select>
+        </div>
+        <div class="form-group">
+          <label for="minute">دقیقه</label>
+          <select id="minute"></select>
+        </div>
+      </div>
+
+<div class="form-group">
+        <label for="projectAreaInput">زمان و تاریخ </label>
+        <input type="text" id="projectAreaInput"class="project-area" name="projectArea">
+      </div>
+
+		
+</div>
+     
+</div>
+<div class="accordion">
+ <button type="button" onclick="toggleAccordion()">فرم_2</button>
+
+  <div class="panel" id="accordionPanel">
+      <label for="prioritySelect">اولویت:</label>
+    <select id="prioritySelect" onchange="updateField(this, 'projectTitle')">
+      <option value="">انتخاب کنید</option>
+      <option value="کم اهمیت">کم اهمیت</option>
+      <option value="متوسط">متوسط</option>
+      <option value="ضروری">ضروری</option>
+    </select>
+    <input type="text" id="projectTitle" readonly placeholder="اولویت انتخاب شده">
+	
+ <!-- دسته‌بندی فعالیت -->
+    <label for="categorySelect">دسته‌بندی فعالیت:</label>
+    <select id="categorySelect" onchange="updateField(this, 'projectTitle_a')">
+      <option value="">انتخاب کنید</option>
+      <option value="شخصی">شخصی</option>
+	    <option value="پروژه ای">پروژه ای</option>
+		  <option value="آموزش">آموزش</option>
+      <option value="مالی">مالی</option>
+      <option value="اجرایی">اجرایی</option>
+	  <option value="جلسات هماهنگی">جلسات هماهنگی</option>
+    </select>
+    <input type="text" id="projectTitle_a" readonly placeholder="دسته‌بندی انتخاب شده">
+
+
+       <!-- افراد/سازمان‌های مرتبط -->
+    <label for="peopleSelect">افراد/سازمان‌های مرتبط:</label>
+    <select id="peopleSelect" onchange="updateField(this, 'projectTitle_b')">
+      <option value="">انتخاب کنید</option>
+      <option value="افراد">افراد</option>
+      <option value="مراکز خصوصی">مراکز خصوصی</option>
+      <option value="مراکز دولتی">مراکز دولتی</option>
+    </select>
+    <input type="text" id="projectTitle_b" readonly placeholder="مربوط به">
+
+	 <!-- مکان -->
+    <label for="locationSelect">مدت زمان تخمینی:</label>
+    <select id="locationSelect" onchange="updateField(this, 'projectTitle_c')">
+      <option value="">انتخاب کنید</option>
+       <option value="زیر یک ساعت">زیر یک ساعت</option>
+	  <option value="نصف روز">نصف روز</option>
+      <option value="یک روز">یک روز</option>
+      <option value="چندروز">چندروز</option>
+	  <option value="بلندمدت">بلندمدت</option>
+    </select>
+    <input type="text" id="projectTitle_c" readonly placeholder="مکان انتخاب شده">
+
+        
+       <label for="reminderSelect">روش یادآوری:</label>
+    <select id="reminderSelect" onchange="updateField(this, 'projectTitle_d')">
+      <option value="">انتخاب کنید</option>
+      <option value="تلگرام">تلگرام</option>
+      <option value="ایمیل">ایمیل</option>
+      <option value="افزودن به تقویم">گالری برنامه</option>
+    </select>
+    <input type="text" id="projectTitle_d" readonly placeholder="روش یادآوری انتخاب شده">
+      
+ 
+      <div>
+        <label for="projectCoordinates">مختصات پروژه (طول و عرض جغرافیایی):</label>
+        <input type="text" id="projectCoordinates" name="projectCoordinates" placeholder="35.7123, 51.3732">
+      </div>
+	  
+</div>
+</div>
+      <div>
+       
+        <input type="hidden" id="combinedText2" name="combinedText">
+        <input type="hidden" id="categories" name="categories">
+        <input type="hidden" id="formId" name="formId" value="فرم یک">
+      </div>
+   
+ 
+<div class="accordion">
+  <button type="button" onclick="toggleAccordion()">نوع و ویژگی برنامه</button>
+
+  <div class="panel" id="accordionPanel">
+        <!-- پنل آکاردئونی دسته اول: نوع کاربری -->
+		
+          <div class="accordion">
+            <div class="accordion-header" onclick="toggleAccordion(this)">برنامه نویسی</div>
+            <div class="accordion-content">
+                <label><input type="checkbox" name="userType[]" value="طراحی نرم افزار">طراحی نرم افزار</label><br>
+                <label><input type="checkbox" name="userType[]" value="توسعه نرم افزار موجود">توسعه نرم افزار موجود</label><br>
+                <label><input type="checkbox" name="userType[]" value="طراحی پلاگین و اسکریپت">طراحی پلاگین و اسکریپت</label><br>
+				<label><input type="checkbox" name="userType[]" value="هوش مصنوعی">هوش مصنوعی</label><br>
+				
+            </div>
+        </div>
+		 <div class="accordion">
+            <div class="accordion-header" onclick="toggleAccordion(this)">معماری</div>
+            <div class="accordion-content">
+                 <label><input type="checkbox" name="userType[]" value="رزومه جدید">رزومه جدید</label><br>
+                <label><input type="checkbox" name="userType[]" value="ادامه رزومه قبلی"> ادامه رزومه قبلی</label><br>
+	
+        </div>
+		 </div>
+	  <div class="accordion">
+            <div class="accordion-header" onclick="toggleAccordion(this)">آموزش</div>
+            <div class="accordion-content">
+                 <label><input type="checkbox" name="structureType[]" value="نرم افزارهای معماری">نرم افزارهای معماری</label><br>
+                <label><input type="checkbox" name="structureType[]" value="برنامه نویسی">برنامه نویسی</label><br>
+				<label><input type="checkbox" name="structureType[]" value="برنامه های دیگر">برنامه های دیگر</label><br>
+            </div>
+        </div>
+		
+		</div>
+	    </div>
+		
+ <input type="submit" value="انتشار">
+       
+    </form>
+	
+	  
+	   </div>
+ <script src="file/form text.js" defer></script> <!-- لینک به فایل JavaScript -->
+</body>
+</html>
