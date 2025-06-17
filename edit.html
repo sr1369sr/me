@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>اصلاح وضعیت رویداد</title>
+  <link rel="stylesheet" href="file/edit.css"> <!-- لینک به فایل CSS -->
+</head>
+<body>
+
+<form id="editCellForm">
+  <h2>ویرایش سلول خاص</h2>
+
+  <label for="rowId">شماره ردیف:</label>
+  <input type="number" id="rowId" required>
+
+<select id="colId" name="colId" required>
+  <option value="">-- انتخاب ستون --</option>
+  <option value="1">A (ساعت و تاریخ  ثبت رویداد)</option>
+  <option value="2">B (ایمیل انتشار دهنده)</option>
+  <option value="3">C (عنوان نوشته)</option>
+  <option value="4">D (ویژگی ها)</option>
+  <option value="5">E (آیدی فرم انتشار دهنده)</option>
+  <option value="6">F (مختصات جغرافیایی)</option>
+  <option value="7">G (مختصات جغرافیایی)</option>
+  <option value="8">H (الویت)</option>
+  <option value="9">I (دسته بندی)</option>
+  <option value="10">J(افراد و سازمانهای مرتبط)</option>
+  <option value="11">K (بازه زمانی اجرا)</option>
+  <option value="12">L (پلتفرم اطلاع رسانی)</option>
+  <option value="13">M (شرح کامل رویداد)</option>
+  <option value="14">N (وضعیت)</option>
+  <option value="15">O</option>
+  <option value="16">P</option>
+  <option value="17">Q</option>
+  <option value="18">R</option>
+  <option value="19">S</option>
+  <option value="20">T</option>
+  <option value="21">U</option>
+  <option value="22">V</option>
+  <option value="23">W</option>
+  <option value="24">X</option>
+  <option value="25">Y</option>
+  <option value="26">Z</option>
+</select>
+
+
+  <button type="button" id="loadBtn">بارگذاری محتوا</button>
+
+<label for="statusSelector">وضعیت:</label>
+<select id="statusSelector">
+  <option value="">-- انتخاب وضعیت --</option>
+  <option value="✅">✅ انجام شده</option>
+      <option value="❌">❌ انجام نشده</option>
+      <option value="🔄">🔄 در حال انجام</option>
+</select>
+
+<!-- نمایش گرافیکی وضعیت -->
+<div id="statusPreview" style="margin: 10px 0; font-weight: bold;"></div>
+
+<!-- دکمه چسباندن به TextArea -->
+<button type="button" onclick="pasteStatus()">چسباندن به تکست ادیتور</button>
+
+
+<!-- Textarea اصلی شما -->
+<label for="cellContent">محتوای سلول:</label>
+<textarea id="cellContent" name="cellContent" rows="6" style="width: 100%;"></textarea>
+
+
+  <button type="submit">ذخیره تغییرات</button>
+  <label for="deleteRowId">شماره ردیف برای حذف:</label>
+<input type="number" id="deleteRowId">
+<button type="button" id="deleteBtn" style="background-color:red;">حذف ردیف</button>
+</form>
+
+
+ 
+ <script src="file/edit.js" defer></script> <!-- لینک به فایل JavaScript -->
+</body>
+</html>
